@@ -453,7 +453,18 @@
                 </div>
                 <div class="row border-left-white">
                     <div class="pt-4 col-6 col-lg-3 pb-4 border-bottom-white border-right-white video-thumbnail">
-                        <a href="https://www.youtube.com/watch?v=sGMHE8lrL34" target="_blank" class="thumbnail-content">
+                        <!-- <a href="https://www.youtube.com/watch?v=sGMHE8lrL34" target="_blank" class="thumbnail-content">
+                            <div class="thumbnail-image">
+                                <img src="./assets/images-data/video-thumbnail/hq720-01.jpg" alt="Thumbnial">
+                                <div class="thumbnail-playtime">
+                                    00:37
+                                </div>
+                            </div>
+                            <div class="thumbnail-title">
+                                MIB
+                            </div>
+                        </a> -->
+                        <a href="#;" onclick="revealVideo('video','youtube')" class="thumbnail-content">
                             <div class="thumbnail-image">
                                 <img src="./assets/images-data/video-thumbnail/hq720-01.jpg" alt="Thumbnial">
                                 <div class="thumbnail-playtime">
@@ -464,12 +475,38 @@
                                 MIB
                             </div>
                         </a>
+                        <!-- <button id="playme" onclick="revealVideo('video','youtube')">Play Video</button> -->
+                        <div id="video" class="lightbox" onclick="hideVideo('video','youtube')">
+                            <div class="lightbox-container">  
+                              <div class="lightbox-content">
+                                
+                                <button onclick="hideVideo('video','youtube')" class="lightbox-close">
+                                  Close | ✕
+                                </button>
+                                <div class="video-container">
+                                  <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/sGMHE8lrL34?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                </div>      
+                                
+                              </div>
+                            </div>
+                        </div>
                         <a href="#" class="thumbnail-fn thumbnail-fn__preview">
                             <span href="">미리보기</span>
                         </a>
                     </div>
                     <div class="pt-4 col-6 col-lg-3 pb-4 video-thumbnail border-bottom-white border-right-white">
-                        <a href="https://www.youtube.com/watch?v=hGZf2NAGIXI&t=2s" target="_blank"
+                        <!-- <a href="https://www.youtube.com/watch?v=hGZf2NAGIXI&t=2s" target="_blank"
+                            class="thumbnail-content">
+                            <div class="thumbnail-image">
+                                <img src="./assets/images-data/video-thumbnail/hq720-02.jpg" alt="Thumbnial">
+                                <div class="thumbnail-playtime">
+                                    03:09
+                                </div>
+                            </div>
+                            <div class="thumbnail-title">
+                                MIB19 In 플레이조커 (feat 하마사키 마오)
+                            </div>
+                        </a> --><a href="#;" onclick="revealVideo('video2','youtube')"
                             class="thumbnail-content">
                             <div class="thumbnail-image">
                                 <img src="./assets/images-data/video-thumbnail/hq720-02.jpg" alt="Thumbnial">
@@ -481,6 +518,21 @@
                                 MIB19 In 플레이조커 (feat 하마사키 마오)
                             </div>
                         </a>
+                         <!-- <button id="playme" onclick="revealVideo('video','youtube')">Play Video</button> -->
+                         <div id="video2" class="lightbox" onclick="hideVideo('video2','youtube')">
+                            <div class="lightbox-container">  
+                              <div class="lightbox-content">
+                                
+                                <button onclick="hideVideo('video2','youtube')" class="lightbox-close">
+                                  Close | ✕
+                                </button>
+                                <div class="video-container">
+                                  <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/hGZf2NAGIXI?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                </div>      
+                                
+                              </div>
+                            </div>
+                        </div>
                         <a href="#" class="thumbnail-fn thumbnail-fn__preview">
                             <span href="">미리보기</span>
                         </a>
@@ -1116,6 +1168,22 @@
           AOS.init();
         </script>
     <script type="module" src="assets/js/main.js"></script>
+    <script>
+    // Function to reveal lightbox and adding YouTube autoplay
+    function revealVideo(div,video_id) {
+    var video = document.getElementById(video_id).src;
+    document.getElementById(video_id).src = video+'&autoplay=1'; // adding autoplay to the URL
+    document.getElementById(div).style.display = 'block';
+    }
+
+    // Hiding the lightbox and removing YouTube autoplay
+    function hideVideo(div,video_id) {
+    var video = document.getElementById(video_id).src;
+    var cleaned = video.replace('&autoplay=1',''); // removing autoplay form url
+    document.getElementById(video_id).src = cleaned;
+    document.getElementById(div).style.display = 'none';
+    }
+    </script>
 </body>
 
 </html>
