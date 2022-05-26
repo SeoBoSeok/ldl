@@ -1,0 +1,38 @@
+footer {
+    background: #000;
+    font-size: 0.875rem;
+    color: #fff;
+    border-top: 1px solid $whiteLine25;
+
+    @include media-breakpoint-up(md) {
+        min-height: 196px;
+    }
+
+    ul, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    hr {
+        width: 1px;
+        height: 16px;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        border: 0;
+        opacity: 0.4;
+    }
+
+    .navbar-brand {
+        position: relative;
+        top: -2px;
+        margin-right: 0;
+    }
+}

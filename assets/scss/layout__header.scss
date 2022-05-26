@@ -1,0 +1,150 @@
+.logo {
+    $image: "../images/logo/logo__mib";
+    $width: 3.875rem;
+    $height: 2.1875rem;
+    display: inline-block;
+    width: $width;
+    height: $height;
+    vertical-align: middle;
+    content: "";
+    background: 50%/100% 100% no-repeat;
+    background-image: url($image + ".png");
+    @include image-2x($image + "@2x.png", $width, $height);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    background: transparent;
+    z-index: 21;
+    width: 100%;
+
+    & > .navbar {
+        border-bottom: 1px solid $whiteLine25;
+    }
+
+    .navbar {
+        transition: background-color 0.5s ease;
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        hr {
+            width: 1px;
+            height: 16px;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            border: 0;
+            opacity: 0.4;
+        }
+                
+        .meta-logo {
+            margin-right: 0.65rem;
+
+            img {
+                width: 60px;
+                @include media-breakpoint-down(md) {
+                    width: 60px;
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+
+        &.mobile-active {
+            background-color: rgba(0, 0, 0, 0.75);
+            transition: background-color 0.5s ease;
+        }
+
+        &-dark {
+            background: rgba(0, 0, 0, 0.5);
+
+            @include media-breakpoint-down(md) {
+                background: rgba(0, 0, 0, 0);
+            }
+        }
+
+        &-brand {
+            .logo {
+                position: relative;
+                top: -2px;
+            }
+        }
+
+        &-nav {
+
+
+            .nav-item {
+                text-transform: uppercase;
+                font-weight: 900;
+                position: relative;
+
+                @include media-breakpoint-up(md) {
+                    min-height: 79px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                &.active {
+                    &:after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        height: 2px;
+                        bottom: 2px;
+                        width: calc(100% - 2rem);
+                        background-color: #fff;
+                        padding: 0;
+
+                        @include media-breakpoint-up(md) {
+                            margin-left: 1rem;
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+
+
+                .nav-link {
+                    @include media-breakpoint-up(md) {
+                        padding-left: 0.5rem;
+                        padding-right: 0.5rem;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
+                }
+            }
+        }
+
+        &-subnav {
+            .nav-item {
+                .nav-link {
+                    @include media-breakpoint-up(md) {
+                        padding-left: 0.65rem;
+                        padding-right: 0.65rem;
+                    }
+                }
+
+                &:last-of-type {
+                    .nav-link {
+                        padding-right: 0;
+                    }
+                }
+
+                .dropdown-menu {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+}

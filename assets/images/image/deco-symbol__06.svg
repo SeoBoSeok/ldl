@@ -1,0 +1,10 @@
+<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 8L20 1" stroke="white"/>
+<path d="M13 1L20 8" stroke="white"/>
+<path d="M1 8L8 1" stroke="white"/>
+<path d="M1 1L8 8" stroke="white"/>
+<path d="M13 20L20 13" stroke="white"/>
+<path d="M13 13L20 20" stroke="white"/>
+<path d="M1 20L8 13" stroke="white"/>
+<path d="M1 13L8 20" stroke="white"/>
+</svg>
